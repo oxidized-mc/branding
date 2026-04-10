@@ -1,5 +1,5 @@
-name: Feature Request
-description: Suggest a new feature or improvement
+name: Asset Request
+description: Request new brand assets or modifications to existing ones
 labels: ["enhancement", "needs-triage"]
 body:
   - type: markdown
@@ -7,22 +7,32 @@ body:
       value: |
         Thanks for the suggestion!
 
-  - type: textarea
-    id: problem
+  - type: dropdown
+    id: type
     attributes:
-      label: Problem / motivation
-      description: What problem does this solve?
+      label: Request type
+      options:
+        - New asset (logo, icon, banner, etc.)
+        - Modification to existing asset
+        - New format / size variant
+        - Other
     validations:
       required: true
 
   - type: textarea
-    id: solution
+    id: description
     attributes:
-      label: Proposed solution
+      label: Description
+      description: What asset do you need and where will it be used?
     validations:
       required: true
 
   - type: textarea
-    id: alternatives
+    id: requirements
     attributes:
-      label: Alternatives considered
+      label: Requirements
+      placeholder: |
+        Format: SVG / PNG / both
+        Size: 128x128, 512x512
+        Background: transparent / dark / light
+        Usage: README badge, social media, print, etc.

@@ -1,31 +1,39 @@
-name: Bug Report
-description: Report an issue with this repository
+name: Asset Issue
+description: Report a problem with brand assets (wrong colors, rendering issues, incorrect format)
 labels: ["bug", "needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug!
+        Thanks for reporting an issue with the brand assets!
         Please fill in as much detail as possible.
+
+  - type: input
+    id: asset
+    attributes:
+      label: Affected asset
+      placeholder: "e.g. logos/logo.svg, logos/logo.png"
+    validations:
+      required: true
 
   - type: textarea
     id: description
     attributes:
-      label: What happened?
-      description: A clear description of the bug.
+      label: What's wrong?
+      description: Describe the issue with the asset (wrong colors, rendering, format, etc.)
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: What did you expect to happen?
+      label: What did you expect?
     validations:
       required: true
 
   - type: textarea
-    id: reproduce
+    id: context
     attributes:
-      label: Steps to reproduce
-    validations:
-      required: true
+      label: Where did you encounter this?
+      placeholder: |
+        e.g. Rendering in dark mode, specific browser, print media, etc.
